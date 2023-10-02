@@ -421,6 +421,12 @@ input[type=name] {
     header {
         margin-bottom: 4rem;
     }
+    .body-main-container {
+        width: 95%;
+    }
+    .logo-font {
+    font-size: 3.5rem;
+    }
 }
 
 @media screen and (max-width: 320px) {
