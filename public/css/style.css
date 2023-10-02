@@ -26,6 +26,10 @@
     .padding-top {
         padding-top: 5rem;
     }
+    .margin-center {
+        margin: 5rem auto;
+        width: 100%;
+    }
     .full-width {
         width: 100%;
     }
