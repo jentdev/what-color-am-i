@@ -69,7 +69,6 @@
         font-size: var(--fs-body);
     }
     body {
-        position: relative;
         width: 100%;
         color: var(--clr-darkest);
         font-family: var(--ff-content);
@@ -77,6 +76,10 @@
         background: var(--clr-light);
         margin: 10rem auto;
         max-width: 700px;
+    }
+
+    .body-container {
+        position: relative;
     }
 
     .body-container,
@@ -120,6 +123,9 @@
     }
     i.fa-trophy {
         font-size: 5rem;
+        position: absolute;
+        top: 6rem;
+        left: 1rem;
     }
     
     .high-score-container {
