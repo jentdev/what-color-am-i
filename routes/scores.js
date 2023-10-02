@@ -15,8 +15,8 @@ router.post('/', async (req, res) => {
         const [r, g, b] = req.body.rgbval;
         
         res.render('result', { name, accuracy, r, g, b, rr, rg, rb });
-        console.log(rr);
-        console.log(rg);
+        // console.log(rr);
+        // console.log(rg);
 
     } catch (err) {
         console.error(err);

@@ -415,6 +415,12 @@ input[type=name] {
     main > div {
         height: 24rem;
     }
+    .logo {
+        width: 8rem;
+    }
+    header {
+        margin-bottom: 4rem;
+    }
 }
 
 @media screen and (max-width: 320px) {
@@ -432,5 +438,14 @@ input[type=name] {
     }
     .logo-font {
         font-size: 2.5rem;
+    }
+    .logo {
+        width: 8rem;
+    }
+    .padding-bottom {
+        padding-bottom: 2rem;
+    }
+    header {
+        margin-bottom: 4rem;
     }
 }
