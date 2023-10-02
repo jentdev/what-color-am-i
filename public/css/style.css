@@ -274,6 +274,10 @@ input[type=name] {
         background: #000;
     }
 
+    .result-page {
+        display: flex;
+    }
+
 /* SLIDERS */
     .rgb-sliders {
         padding: var(--fs-body);
@@ -405,9 +409,9 @@ input[type=name] {
         font-size: 52%;
     }
     :root {
-        --fs-h1: 3rem;
-        --fs-h2: 2.6rem;
-        --fs-h3: 2.2rem;
+        --fs-h1: 4rem;
+        --fs-h2: 3rem;
+        --fs-h3: 2.5rem;
     }
     body {
         width: 95vw;
@@ -426,6 +430,23 @@ input[type=name] {
     }
     .logo-font {
     font-size: 3.5rem;
+    }
+    #result-page-container {
+        flex-grow: 1;
+    }
+        #result-page {
+        width: 100%;
+    }
+    .value-line {
+        display: block;
+        width: 100%;
+    }
+    label.random-rgb,
+    label.guessed-rgb,
+    span.random-rgb,
+    span.guessed-rgb {
+        display: block;
+        white-space: no-wrap;
     }
 }
 
