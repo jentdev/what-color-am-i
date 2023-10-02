@@ -4,8 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "cross-env node app",
-    "dev": "cross-env nodemon app"
+    "start": "cross-env node index",
+    "dev": "cross-env nodemon index"
   },
   "author": "",
   "license": "ISC",
