@@ -395,7 +395,7 @@ input[type=name] {
 
 @media (min-width: 543px) and (max-width: 590px) {
     :root {
-        --fs-h1: 4.3rem;
+        --fs-h1: 3.5rem;
         --fs-h3: 2.8rem;
     }
 }
@@ -405,9 +405,9 @@ input[type=name] {
         font-size: 52%;
     }
     :root {
-        --fs-h1: 4rem;
-        --fs-h2: 3.5rem;
-        --fs-h3: 3rem;
+        --fs-h1: 3rem;
+        --fs-h2: 2.6rem;
+        --fs-h3: 2.2rem;
     }
     body {
         width: 95vw;
@@ -422,7 +422,7 @@ input[type=name] {
         font-size: 42%;
     }
     :root {
-        --fs-h1: 3.5rem;
+        --fs-h1: 3rem;
     }
     body {
         width: 100vw;
@@ -431,6 +431,6 @@ input[type=name] {
         height: 20rem;
     }
     .logo-font {
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
 }
