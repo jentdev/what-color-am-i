@@ -1,0 +1,48 @@
+<%- include('partials/_header.ejs') %>
+
+
+<div class="bg-opacity"></div>
+
+    <div class="highscores">
+        <a href="/scores/highscores"><i class="fa-solid fa-trophy"></i></a>
+    </div>
+
+
+    <div id="result-heading" class="heading"><b><%= name %></b>, let's see how well you did.</div>
+
+<div class="result-super-container">
+    <div>
+        <label class="accuracy left">Accuracy:</label>
+        <span id="percent"><b><%= accuracy %> %</b></span>
+    </div>
+
+    <section class="flex" id ="result-page-container">
+        <div id="result-page">
+            <p class="left result-label">Randomized Color:</p>
+            
+            <div class="value-line flex">
+                <label for="random-rgb">RGB:</label>
+                <span id="random-rgb"><b>(<%=rr%>, <%=rg%>, <%=rb%>)</b></span>
+                
+            </div>
+        </div>
+
+        <div id="result-page">
+        <p class="left result-label">Your Guess:</p>
+
+            <div class="value-line flex">
+                <label for="guessed-rgb">RGB:</label>
+                <span id="guessed-rgb"><b>(<%=r%>, <%=g%>, <%=b%>)</b></span>
+            </div>
+        </div>
+
+    </section>
+</div>
+<form>
+    <div class="padding-bottom padding-top">
+        <button type="submit" id="submit-guess">Play Again</button>
+    </div>
+    </form>
+
+
+<%- include('partials/_footer.ejs') %>

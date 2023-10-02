@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="../css/style.css">
+    <title>High Scores</title>
+</head>
+<body>
+    <div class="container high-score-container">
+    <div class="card card-high-scores">
+    <table class="display-high-scores">
+        <tr>
+            <th>NAME</th>
+            <th>SCORE</th>
+        </tr>
+<% for (let i = 0; i < scores.length; i++) { %>
+    <% if (i < 3) { %>
+        <tr>
+            <td><i class="fa-solid fa-medal"></i> <%= scores[i].name %></td>
+            <td><%= (scores[i].score).toFixed(2) %></td>
+        </tr>
+    <% }  else { %>
+        <tr>
+            <td><%= scores[i].name %></td>
+            <td><%= (scores[i].score).toFixed(2) %></td>
+        </tr>
+    <% } %>
+
+<% } %>
+    </table>
+    </div>
+    </div>
+    <script src="../js/highscores.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>

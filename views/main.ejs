@@ -1,0 +1,16 @@
+<%- include('partials/_header.ejs') %>
+
+<div class="heading">
+<h2 class="padding-bottom">Welcome, <b><%= name %></b>!</h2>
+<p>Try to correctly guess the RGB values of the randomly generated color.</p>
+</div>
+
+<div class="bg-opacity"></div>
+
+<div class="highscores">
+    <a href="/scores/highscores"><i class="fa-solid fa-trophy"></i></a>
+</div>
+
+<%- include('partials/_sliders.ejs') %>
+
+<%- include('partials/_footer.ejs') %>

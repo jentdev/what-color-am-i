@@ -1,0 +1,50 @@
+    <main class="flex" id ="color-squares">
+        <!-- display random color -->
+        <div id="random-color" class="flex">
+            
+        </div>
+        
+
+        <!-- display guessed color -->
+         <div id="guessed-color" class="flex">
+            <div id="guessed-result">
+                <div class="value-line flex">
+                    <label for="guessed-hex">Hex:</label>
+                    <span id="guessed-hex">#000000</span>
+                </div>
+                <div class="value-line flex">
+                    <label for="guessed-rgb">RGB:</label>
+                    <span id="guessed-rgb">(0, 0, 0)</span>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <form action="/scores" method="POST">
+    <section class="rgb-sliders">
+        <div class="flex">
+            <label for="range-red">R:</label>
+            <input type="range" min="0" max="255" value="0" id="range-red">
+            <input type="hidden" id="redval" name="rgbval" value="0">
+        </div>
+        <div class="flex">
+            <label for="range-green">G:</label>
+            <input type="range" min="0" max="255" value="0" id="range-green">
+            <input type="hidden" id="greenval" name="rgbval" value="0">
+        </div>
+        <div class="flex">
+            <label for="range-blue">B: </label>
+            <input type="range" min="0" max="255" value="0" id="range-blue">
+            <input type="hidden" id="blueval" name="rgbval" value="0">
+        </div> 
+
+        
+        <input type="hidden" id="resultval" name="resultval" value="0">
+
+
+        <div class="btn-container flex">
+            <span><button type="submit" id="submit-guess">Check Answer</button></span>
+            <span><button type="reset" id="reset">Start Over</button></span>
+        </div>
+    </section>
+</form>
