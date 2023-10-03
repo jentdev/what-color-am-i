@@ -311,10 +311,7 @@ input[type=name] {
     .rgb-sliders input {
         flex-grow: 1;
     }
-
-    .name-container {
-        align-items: center;
-    }
+    
 /* BUTTONS */
     .btn-container {
         justify-content: center;
