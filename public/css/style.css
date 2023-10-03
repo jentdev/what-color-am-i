@@ -312,7 +312,9 @@ input[type=name] {
         flex-grow: 1;
     }
 
-
+    .name-container {
+        align-items: center;
+    }
 /* BUTTONS */
     .btn-container {
         justify-content: center;
