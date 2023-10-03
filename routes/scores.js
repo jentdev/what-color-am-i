@@ -6,7 +6,7 @@ const path = require('path');
 router.post('/', async (req, res) => {
     try {
         // console.log('req body', req.body);
-        const [accuracy, rr, rg, rb] = (req.body.resultval).split(',');
+        const [accuracy, rr, rg, rb, gh, rh] = (req.body.resultval).split(',');
         const name = req.session.name;
         await Score.create({
             score: accuracy,
@@ -14,7 +14,7 @@ router.post('/', async (req, res) => {
         });
         const [r, g, b] = req.body.rgbval;
         
-        res.render('result', { name, accuracy, r, g, b, rr, rg, rb });
+        res.render('result', { name, accuracy, r, g, b, rr, rg, rb, gh, rh });
         // console.log(rr);
         // console.log(rg);
 

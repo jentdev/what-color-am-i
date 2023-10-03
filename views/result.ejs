@@ -10,6 +10,41 @@
 
     <div id="result-heading" class="heading"><b><%= name %></b>, let's see how well you did.</div>
 
+<main class="flex" id ="color-squares">
+<!-- display random color -->
+        <div id="" class="flex" style="background-color:rgb(<%=rr%>,<%=rg%>,<%=rb%>);">
+            <div id="random-result">
+                <div class="value-line flex">
+                    <label>Hex:</label>
+                    <span id="random-hex"><%=rh%></span>
+                </div>
+                <div class="value-line flex">
+                    <label>RGB:</label>
+                    <span id="random-rgb">(<%=rr%>, <%=rg%>, <%=rb%>)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- display guessed color -->
+         <div id="" class="flex" style="background-color:rgb(<%=r%>, <%=g%>, <%=b%>);">
+            <div id="guessed-result">
+                <div class="value-line flex">
+                    <label>Hex:</label>
+                    <span id="guessed-hex"><%=gh%></span>
+                </div>
+                <div class="value-line flex">
+                    <label>RGB:</label>
+                    <span id="guessed-rgb">(<%=r%>, <%=g%>, <%=b%>)</span>
+                </div>
+            </div>
+        </div>
+</main>
+
+
+
+
+
+
 <div class="result-super-container">
     <div>
         <label class="accuracy left">Accuracy:</label>

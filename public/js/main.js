@@ -91,7 +91,10 @@ function calc (random, guessed) {
     let bDiff = Math.abs(rResult[2] - gResult[2]);
 
     let percentage = 100 - (((rDiff / 255) + (gDiff / 255) + (bDiff / 255)) / 3 * 100);
-    return [percentage.toFixed(2), rr, rg, rb];
+
+    let guessedHex =  rgbToHex(guessed);
+    let randomHex =  rgbToHex(random);
+    return [percentage.toFixed(2), rr, rg, rb, guessedHex.toUpperCase(), randomHex.toUpperCase()];
 }
 
 // function to convert from num to hex
