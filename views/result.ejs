@@ -46,38 +46,17 @@
 
 
 <div class="result-super-container">
-    <div>
+    <div class="result-sub-container">
         <label class="accuracy left">Accuracy:</label>
         <span id="percent"><b><%= accuracy %> %</b></span>
     </div>
-
-    <section class="flex" id ="result-page-container">
-        <div id="result-page">
-            <p class="left result-label">Randomized Color:</p>
-            
-            <div class="value-line">
-                <label for="random-rgb">RGB:</label>
-                <span id="random-rgb"><b>(<%=rr%>, <%=rg%>, <%=rb%>)</b></span>
-                
-            </div>
-        </div>
-
-        <div id="result-page">
-        <p class="left result-label">Your Guess:</p>
-
-            <div class="value-line">
-                <label for="guessed-rgb">RGB:</label>
-                <span id="guessed-rgb"><b>(<%=r%>, <%=g%>, <%=b%>)</b></span>
-            </div>
-        </div>
-
-    </section>
 </div>
+
 <form>
     <div class="padding-bottom padding-top">
         <button type="submit" id="submit-guess">Play Again</button>
     </div>
-    </form>
+</form>
 
 
 <%- include('partials/_footer.ejs') %>
