@@ -14,13 +14,13 @@ const User = require('../models/User');
 
 // desc     authenticate with google
 // route    GET /auth/google
-router.get('/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
+// router.get('/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
 
 // desc     google callback
 // route    GET /auth/google/callback
-router.get('/google/callback', passport.authenticate('google', {failureRedirect: '/'}), (req, res) => {
-    res.redirect('/main'); // if success
-});
+// router.get('/google/callback', passport.authenticate('google', {failureRedirect: '/'}), (req, res) => {
+//     res.redirect('/main'); // if success
+// });
 
 // ---- LOCAL AUTH ---- //
 
