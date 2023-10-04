@@ -1,0 +1,55 @@
+<div>
+    
+    <%- include('_errors') %>
+    <form action="/auth/signin" method="POST">
+        <div class="form-container">
+            <div class="form-row">
+                <div class="form-label">
+                    <label for="email" class="form-label">Email</label>
+                </div>
+                <div class="form-field">
+                    <input
+                        type="email"
+                        class="form-control"
+                        id="email"
+                        name="email"
+                        value="<%= typeof email != 'undefined' ? email : '' %>"
+                        required />
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-label">
+                    <label for="password" class="form-label">Password</label>
+                </div>
+                <div class="form-field">
+                    <input
+                        type="password"
+                        class="form-control"
+                        id="password"
+                        name="password"
+                        minlength="6"
+                        value="<%= typeof password != 'undefined' ? password : '' %>"
+                        required />
+                </div>
+            </div>
+
+            <div class="padding-bottom padding-top">
+                <button type="submit" class="submit-guess">Sign In</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<hr>
+
+<div class="auth">
+    <div class="auth-email">
+        <a class="submit" href="/auth/signup"><i class="fa-regular fa-envelope"></i> &nbsp;Sign up with Email</a>
+    </div>
+            
+    <div class="auth-google">
+        <a class="submit" href="/auth/google"><i class="fa-brands fa-google"></i> &nbsp;Sign in with Google</a>
+    </div>
+</div>

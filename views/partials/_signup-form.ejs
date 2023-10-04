@@ -1,0 +1,85 @@
+<div>
+    
+    <%- include('_errors') %>
+    <form action="/auth/signup" method="POST">
+        <div class="form-container">
+            <div class="form-row">
+                <div class="form-label">
+                    <label for="name" class="form-label">Name: </label>
+                </div>
+                <div class="form-field">
+                    <input
+                        type="name"
+                        class="form-control"
+                        id="name"
+                        name="name"
+                        value="<%= typeof name != 'undefined' ? name : '' %>"
+                        required />
+                </div>
+            </div> 
+
+            <div class="form-row">
+                <div class="form-label">
+                    <label for="email" class="form-label">Email</label>
+                </div>
+                <div class="form-field">
+                    <input
+                        type="email"
+                        class="form-control"
+                        id="email"
+                        name="email"
+                        value="<%= typeof email != 'undefined' ? email : '' %>"
+                        required />
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-label">
+                    <label for="password" class="form-label">Password</label>
+                </div>
+                <div class="form-field">
+                    <input
+                        type="password"
+                        class="form-control"
+                        id="password"
+                        name="password"
+                        minlength="6"
+                        value="<%= typeof password != 'undefined' ? password : '' %>"
+                        required />
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-label">
+                    <label for="password2" class="form-label">Confirm password</label>
+                </div>
+                <div class="form-field">
+                    <input
+                        type="password"
+                        class="form-control"
+                        id="password2"
+                        name="password2"
+                        minlength="6"
+                        value="<%= typeof password2 != 'undefined' ? password2 : '' %>"
+                        required />
+                </div>
+            </div>
+
+            <div class="padding-bottom padding-top">
+                <button type="submit" class="submit-guess">Sign Up</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<hr>
+
+<div class="auth">
+    <div class="auth-email">
+        <a class="submit" href="/"><i class="fa-regular fa-envelope"></i> &nbsp;Sign in with Email</a>
+    </div>
+            
+    <div class="auth-google">
+        <a class="submit" href="/auth/google"><i class="fa-brands fa-google"></i> &nbsp;Sign in with Google</a>
+    </div>
+</div>

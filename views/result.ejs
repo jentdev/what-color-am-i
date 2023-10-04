@@ -7,56 +7,49 @@
         <a href="/scores/highscores"><i class="fa-solid fa-trophy"></i></a>
     </div>
 
-
-    <div id="result-heading" class="heading"><b><%= name %></b>, let's see how well you did.</div>
+    <div id="result-heading" class="heading"><b><%= user.name %></b>, let's see how well you did.</div>
 
 <main class="flex" id ="color-squares">
 <!-- display random color -->
-        <div id="" class="flex" style="background-color:rgb(<%=rr%>,<%=rg%>,<%=rb%>);">
+        <div id="" class="flex" style="background-color:rgb(<%=randomColor.red%>,<%=randomColor.green%>,<%=randomColor.blue%>);">
             <div id="random-result">
                 <div class="value-line flex">
                     <label>Hex:</label>
-                    <span id="random-hex"><%=rh%></span>
+                    <span id="random-hex"><%=randomColor.hex%></span>
                 </div>
                 <div class="value-line flex">
                     <label>RGB:</label>
-                    <span id="random-rgb">(<%=rr%>, <%=rg%>, <%=rb%>)</span>
+                    <span id="random-rgb">(<%=randomColor.red%>, <%=randomColor.green%>, <%=randomColor.blue%>)</span>
                 </div>
             </div>
         </div>
 
         <!-- display guessed color -->
-         <div id="" class="flex" style="background-color:rgb(<%=r%>, <%=g%>, <%=b%>);">
+         <div id="" class="flex" style="background-color:rgb(<%=guessedColor.red%>,<%=guessedColor.green%>,<%=guessedColor.blue%>);">
             <div id="guessed-result">
                 <div class="value-line flex">
                     <label>Hex:</label>
-                    <span id="guessed-hex"><%=gh%></span>
+                    <span id="guessed-hex"><%=guessedColor.hex%></span>
                 </div>
                 <div class="value-line flex">
                     <label>RGB:</label>
-                    <span id="guessed-rgb">(<%=r%>, <%=g%>, <%=b%>)</span>
+                    <span id="guessed-rgb">(<%=guessedColor.red%>, <%=guessedColor.green%>, <%=guessedColor.blue%>)</span>
                 </div>
             </div>
         </div>
 </main>
 
-
-
-
-
-
 <div class="result-super-container">
-    <div class="result-sub-container">
+    <div class="result-sub-container padding-bottom">
         <label class="accuracy left">Accuracy:</label>
-        <span id="percent"><b><%= accuracy %> %</b></span>
+        <span id="percent"><b><%= score.score %> %</b></span>
     </div>
 </div>
 
-<form>
+<form action="/scores" method="GET">
     <div class="padding-bottom padding-top">
         <button type="submit" id="submit-guess">Play Again</button>
     </div>
 </form>
-
 
 <%- include('partials/_footer.ejs') %>

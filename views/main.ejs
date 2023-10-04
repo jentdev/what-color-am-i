@@ -1,7 +1,7 @@
 <%- include('partials/_header.ejs') %>
 
 <div class="heading">
-<h2 class="padding-bottom">Welcome, <b><%= name %></b>!</h2>
+<h2 class="padding-bottom">Welcome, <b><%= user.name %></b>! <span><a href="/auth/logout" class="btn">(log out?)</a></span></h2>
 <p>Try to correctly guess the RGB values of the randomly generated color.</p>
 </div>
 

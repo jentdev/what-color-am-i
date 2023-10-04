@@ -1,46 +1,65 @@
 const express = require('express');
 const router = express.Router();
 const Score = require("../models/Score");
-const path = require('path');
+const Color = require("../models/Color");
+
+const { ensureAuth, ensureGuest } = require('../config/auth');
 
 router.post('/', async (req, res) => {
     try {
-        // console.log('req body', req.body);
         const [accuracy, rr, rg, rb, gh, rh] = (req.body.resultval).split(',');
-        const name = req.session.name;
-        await Score.create({
-            score: accuracy,
-            name: name
-        });
         const [r, g, b] = req.body.rgbval;
+        const score = await Score.create({
+            score: accuracy,
+            name: req.user,
+        });
+
+        const guessedColor = await Color.create({
+            red: r,
+            green: g,
+            blue: b,
+            hex: gh
+        });
+        const randomColor = await Color.create({
+            red: rr,
+            green: rg,
+            blue: rb,
+            hex: rh
+        });
         
-        res.render('result', { name, accuracy, r, g, b, rr, rg, rb, gh, rh });
-        // console.log(rr);
-        // console.log(rg);
+        
+        res.render('result', { name: req.user.name, score, guessedColor, randomColor });
 
     } catch (err) {
         console.error(err);
+        res.redirect('/');
     }
 
 });
 
-router.get('/', async (req, res) => {
+router.get('/', ensureAuth, async (req, res) => {
     try {
-        res.render('main', { name: req.session.name });
-
+        res.render('main');
     } catch (err) {
         console.error(err);
+        res.redirect('/');
     }
 });
 
-router.get('/highscores', async (req, res) => {
-    let scores;
+router.get('/highscores', ensureAuth, async (req, res) => {
     try {
-        scores = await Score.find().sort({ score: -1, date: 1 }).limit(10); 
+        let scores = await Score.find()
+            .sort({ score: -1, date: 1 })
+            .limit(10)
+            .populate('name')
+            .lean(); 
+        res.render('highscores', { scores });
+        // console.log('scores ', scores);
+
     } catch (err) {
         console.error(err);
+        res.redirect('/');
     }
-    res.render('highscores', { scores });
 });
 
 

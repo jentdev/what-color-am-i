@@ -6,8 +6,8 @@ const ScoreSchema = new mongoose.Schema({
         required: true,
     },
     name: {
-        type: String,
-        required: true,
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User', // Use model for populate
     },
     createdAt: {
         type: Date,

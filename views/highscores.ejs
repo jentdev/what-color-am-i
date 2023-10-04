@@ -20,12 +20,12 @@
 <% for (let i = 0; i < scores.length; i++) { %>
     <% if (i < 3) { %>
         <tr>
-            <td><i class="fa-solid fa-medal"></i> <%= scores[i].name %></td>
+            <td><i class="fa-solid fa-medal"></i> <%= scores[i].name.name%></td>
             <td><%= (scores[i].score).toFixed(2) %></td>
         </tr>
     <% }  else { %>
         <tr>
-            <td><%= scores[i].name %></td>
+            <td><%= scores[i].name.name %></td>
             <td><%= (scores[i].score).toFixed(2) %></td>
         </tr>
     <% } %>
