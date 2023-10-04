@@ -202,7 +202,9 @@
     .auth-google {
         flex-basis: 100%;
     }
-
+    .auth a {
+        color: var(--clr-med);
+    }
     hr {
         padding-bottom: 3rem;
         border: none;
