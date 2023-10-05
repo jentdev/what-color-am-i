@@ -46,6 +46,9 @@
         font-size: var(--fs-body);
         color: var(--clr-failed);
     }
+    h2 {
+        font-size: var(--fs-h2);
+    }
     /* h2 span a:hover {
         color: var(--clr-passed);
     } */
@@ -83,7 +86,7 @@
         font-size: var(--fs-body);
         background: var(--clr-light);
         margin: 10rem auto;
-        max-width: 700px;
+        max-width: 650px;
     }
 
     .body-container {
@@ -96,7 +99,7 @@
     #result-page-container {
         
         margin: 0 auto;
-        width: 100%;
+        width: 95%;
     }
 
     .result-super-container {
@@ -109,7 +112,7 @@
     }
 
     .body-main-container {
-        width: 100%;
+        width: 95%;
         background: var(--clr-light);
         padding: 5rem 3rem;
         box-shadow: 2px 2px 2px 1px rgba(128, 128, 128, .5);
@@ -166,10 +169,11 @@
     }
 
     input.form-control {
+        width: 250px;
         padding: 0 1rem;
         border: none;
         border-bottom: 1px solid var(--clr-passed);
-        width: 350px;
+
         box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
         height: 3.5rem;
     }
@@ -180,7 +184,7 @@
         align-items: center;
     }
     .form-row {
-        width: 350px;
+        max-width: 350px;
         display: flex;
         flex-direction: column;    
         margin-bottom: 1rem;
@@ -446,7 +450,7 @@
     }
  }
 
-@media screen and (max-width: 649px) {
+@media screen and (max-width: 651px) {
     .result-sub {
         flex-wrap: wrap;
     }
@@ -457,25 +461,31 @@
     }
 }
 
-@media (min-width: 543px) and (max-width: 590px) {
+@media (min-width: 543px) and (max-width: 650px) {
     :root {
         --fs-h1: 3.5rem;
+        --fs-h2: 3rem;
         --fs-h3: 2.8rem;
+    }
+    .body-container,
+    #result-super-container,
+    #result-heading,
+    #result-page-container,
+    body {
+        width: 90vw;
     }
 }
 
-@media screen and (max-width: 542px) {
+@media screen and (max-width: 550px) {
     html {
         font-size: 52%;
     }
     :root {
         --fs-h1: 4rem;
-        --fs-h2: 3rem;
+        --fs-h2: 2.8rem;
         --fs-h3: 2.5rem;
     }
-    body {
-        width: 95vw;
-    }
+
     main > div {
         height: 24rem;
     }
@@ -485,9 +495,9 @@
     header {
         margin-bottom: 4rem;
     }
-    .body-main-container {
+    /* .body-main-container {
         width: 95%;
-    }
+    } */
     .logo-font {
     font-size: 3.5rem;
     }
@@ -542,5 +552,8 @@
     }
     .form-field input {
         width: 80vw;
+    }
+    input.form-control {
+        width: 200px;
     }
 }
