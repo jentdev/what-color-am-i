@@ -540,5 +540,7 @@
     header {
         margin-bottom: 4rem;
     }
-
+    .form-field input {
+        width: 80vw;
+    }
 }
