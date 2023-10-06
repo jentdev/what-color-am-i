@@ -33,7 +33,6 @@ app.use(session({
     })
 }));
 
-app.use(passport.authenticate('session'));
 
 app.set('view engine', 'ejs');
 // bodyparser to get data from form
