@@ -24,8 +24,15 @@ app.use(session({
   secret: 'keyboard cat',
   resave: false, // don't save if nothing is modified
   saveUninitialized: false, // don't create a session until something is stored
-  store: MongoStore.create({ mongoUrl: process.env.MONGO_URI}),
-}))
+  cookie : {
+    maxAge: 1000* 60 * 60 *24 * 7,
+  },
+  store: MongoStore.create({
+    mongoUrl: process.env.MONGO_URI,
+    client: mongoose.connection.getClient()
+    })
+}));
+
 app.use(passport.authenticate('session'));
 
 app.set('view engine', 'ejs');
@@ -36,20 +43,6 @@ app.use(express.static('public'));
 
 // use morgan to log requests
 app.use(morgan('dev'));
-
-// sessions - make sure it's above passport middleware
-app.use(session({
-  secret: 'keyboard cat',
-  resave: false, // don't save if nothing is modified
-  saveUninitialized: false, // don't create a session until something is stored
-  cookie : {
-    maxAge: 1000* 60 * 60 *24 * 7,
-  },
-  store: MongoStore.create({
-    mongoUrl: process.env.MONGO_URI,
-    client: mongoose.connection.getClient()
-    })
-}));
 
 // passport middleware
 app.use(passport.initialize());
